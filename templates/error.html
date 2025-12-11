@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <style>
+        .error-container {
+            padding: 30px;
+            text-align: center;
+            margin-top: 50px;
+            border: 2px solid #dc3545; 
+            background-color: #f8d7da; 
+            border-radius: 8px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            color: #dc3545; 
+            margin-bottom: 20px;
+        }
+        .error-message {
+            color: #721c24;
+            font-size: 1.1em;
+            word-wrap: break-word; 
+            margin-bottom: 30px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container error-container">
+        <h1>🚨 Application Error</h1>
+        <p>We encountered an issue while processing your request. Please review the details below:</p>
+        
+        <div class="error-message">
+            <strong>Error Detail:</strong> {{ error }}
+        </div>
+
+        <p>This is usually caused by missing required input or an issue with the prediction logic.</p>
+        <a href="/" class="back-link">Return to Input Form</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f7f6;
+            margin: 0;
+        }
+        .result-container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 500px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        .eligibility-status {
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .eligible {
+            color: #155724;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+        }
+        .not-eligible {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+        }
+        .back-link {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+    <h1>Prediction Result</h1>
+    
+    {% if prediction %} 
+        <div class="eligibility-status 
+            {% if 'Eligible' in prediction %}eligible{% else %}not-eligible{% endif %}">
+            {{ prediction }}
+        </div>
+    {% else %}
+        <div class="eligibility-status not-eligible">
+            Error: Prediction result not available.
+        </div>
+    {% endif %}
+
+    <a href="/" class="back-link">Try Another Prediction</a>
+</div>
+</body>
+</html>
