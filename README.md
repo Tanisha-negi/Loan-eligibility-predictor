@@ -1,3 +1,12 @@
+---
+title: Loan Eligibility Predictor
+emoji: 📈
+colorFrom: green
+colorTo: blue
+sdk: docker
+pinned: false
+---
+
 # 🏦 Loan Eligibility Prediction Model
 
 This project implements a machine learning solution to automate the loan approval process by predicting the eligibility status of an applicant. The objective is to build a reliable classification model that minimizes risk for financial institutions and speeds up the decision-making process.
